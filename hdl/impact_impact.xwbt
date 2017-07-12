@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Users\brain\projects\CocoFlash\hdl.xc95144xl\impact.xsl
+OUTFILE=C:\Users\brain\projects\CocoFlash\hdl.xc95144xl\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=C:\Users\brain\projects\CocoFlash\hdl.xc95144xl
+LICENSE=iMPACT
+USER_INFO=iMPACT
