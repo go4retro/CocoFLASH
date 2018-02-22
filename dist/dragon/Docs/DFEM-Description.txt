@@ -1,0 +1,176 @@
+DFEM14U DESCRIPTION
+===================
+I have written a program to be able to use the CoCo-Flash module 
+designed and built by Retroinnovations (Jim Brain) that contains 
+8 Mytes of FLASH memory, 64k of SPI EEPROM and as a bonus it has a 
+full compatible Orchestra 90CC double DAC incorporated.
+The flash is maped to $c000-$feff (16k-256 bytes) so it can contain 
+any Dragon-CoCo2 ROM we have. Moving that 'visible' window along the
+FLASH contents we can store/read biggger programs (BIN or BAS files)
+You will find info about that module here:
+http://www.go4retro.com/products/cocoflash/
+
+'DFEM' stands for "Dragon Flash Eeprom Manager"
+The program will 'flash' programs in chunks of 16k, from $3000-6fff 
+and later you could start them from the program list.
+I decided to allow Binary and Basic programs besides the normal ROMs, 
+so I added some code to copy those programs to RAM and execute/run them.
+These loaders are part of the Program Manager, so there is no need to
+add them at the beginning of the programs we want to store in Flash.
+
+To make it easy for the user, the module should contain a customized version 
+of my DosPlus5.0 extended (DP50E from now on) on bank zero. We will flash
+it here if it isn't yet there.
+This DP50E will copy some code into RAM and start it. The copied code will 
+switch the bank on the flash module so that it can copy the Program Manager 
+and in turn, start it.
+The only thing that the user has to do is press the module button that 
+prevents the ROM from autostarting. The DOS must be called by the Basic
+after it has initialized the Dragon. If you don't press that button, the 
+Dragon will simply hang :-(
+
+I have used the SPI EEPROM included in the module as a database where the 
+relevant data for each program is stored. The idea was given to me by Jim Brain. 
+The programs are always shown in alpha order. Basically the EEPROM contains 
+records that point to the next one, so it is a simple linked list.
+
+To get an idea about the capacity of that module, let's  assume that all
+programs (Binaries/Basic/Rom) will have a mean length of 16k, then as it
+has 8 Mbytes, we could add (8Mb/16k) -> 500 programs, but if they are smaller
+then we could add a lot more. 
+The limit imposed by the EEPROM database is 1600 entries, so it seems that
+we will not have problems for that reason.
+
+I have created two tables in the EEPROM to help work with these entries
+- One that contains 26 Categories that can be assigned to the programs
+- Another for HotKeys that admits 26 entries too.
+The Category can be shared by many programs, but the HotKey will point to 
+only one program.
+
+
+How to configure the Flash module to work on the Dragon
+=======================================================
+Most probably the flash will arrive to you with software for the CoCo, so we need to erase it.
+The procedure we shoud apply, using some tools I included in the pack, is this
+1) We CLOADM"FERASALL.WAV" or DWLOAD"FERASALL.BIN", it will ask you for the slot number where 
+   the Flash module is, you can answer 0 (for no MPI) or 1-2-3-4
+   Once selected, the chip will be fully erased. Don't worry if it lasts some time. The program
+   sends only one command to the chip but it takes long to do the task.
+2) We need to flash the Program Manager, I call it DFEM (Dragon Flash Eeprom Manager), we will
+   use CLOADM"F16KFM.WAV" or DWLOAD"F16KFM.BIN", again it will ask where the module is.
+3) Finally we will flash a customized version of the DP50E that will start the DFEM, for this step 
+   we CLOADM"F16KDP.WAV" or DWLOAD"F16KDP.BIN"
+
+From this moment, we may start/restart the Dragon/Tano while pressing the button on the flash module.
+The Basic will call the DP50E and this will exec the DFEM so the main menu will be displayed.
+On entering the program, it verifies if the EEPROM database exists, and if it is not yet created,
+it will create/format the EEPROM as needed.
+
+
+Possible Hardware Setups
+========================
+Apart from our Dragon and the Flash Module, we need some way to access/load program files to RAM
+from some external hardware in oder to flash them into the module with the DFEM
+
+These are the choices I have tested
+-  A drivewire serial to USB converter, conected to a PC/Mac where we are runnuing a Drivewire server 
+   (or any small Arduino/R-Pi that does the same). This is my preferred setup!
+   By the way, here you can see one adapter for that setup
+   http://tormod.me/products.html
+
+-  A Tandy Multi-Pack (MPI) or a mini-MPI, together with a CoCo-SDC
+   This one has the advantage of enabling us to use the Orchestra 90CC from the flash module and 
+   access the score-disks from the CoCo-SDC, despite the procedure is a bit tricky. 
+   I explain it at the end of this document 
+
+Someone could also try to replace the CoCo-SDC in this last setup with a drive controller
+but this has not been tested by me.
+
+
+
+Pack Contents
+=============
+In the attached zip you should find:
+
+DFEM14U.VDK that contains some utilities for the real CoCo-Flash module and a Test version
+of the program. This is only of use if you have Drivewire ot the MPI and the CoCo-SDC.
+
+All of the binary files are included as individual files in BIN format for DW use
+and in WAV format for tape/Audacity use
+The programs/utilities are:
+DFEM14UT - The Test Version of the Program (works fine on XRoar and on any Dragon)
+F16KDP   - Flashes into module the customized version of DP50E
+F16KFM   - Flashes into module the Flasher Manager Program (DFEM)
+EREADTAB - Shows structured Eeprom contents: LowReg, Records and Tables
+FERASALL - Erases the whole FLASH chip (8Mbytes)
+FERASEC  - Erases one FLASH sector (value needs to be POKED $4007-4008)
+FREADALL - Shows Flashed data (shows 128 of every 256 bytes sector)
+SWMAP1   - This program copies ROM to RAM and stays in MAP1 (all RAM)
+TEST     - a bas file to start the Test version (ONLY in the VDK)
+
+And two Java utility programs
+Addresses  this one will create an output text file with the addresses of all the programs
+           (binary or Basic) that are in the folder selected by the user. Loops untill you
+           press on Cancel (to allow for another subdirectory)
+MakeROM	   Selecting a folder with some programs, will create the ROM chunks needed (1 or 2)
+	   will add -R1, -R2 to these parts.
+
+
+
+FOR TEST VERSION ONLY
+=====================
+You can practice with the Test version, it has space reserved for *ONLY* 32 entries.
+On XRoar or on a SDC you can run the program TEST.BAS to strat it
+On Drivewire you simply DWLOAD"DFEM14UT.BIN"
+
+You should know that the info you'll enter will *NOT* be saved on exit, it is just for 
+practicing purposes! It simply 'emulates' the EEPROM into RAM, not the FLASH of course.
+Anyway, if you want to keep the entered data to use it later, then you could do this
+- Exit the program pressing the '3' key on the main menu 
+- SAVE"MYDATA",&H2ea8,&H36e2,&H2ea8 or alternatively CSAVEM"MYDATA",&H2ea8,&H36e2,&H2ea8
+- Later, to re-use it after starting the TEST program, just press '3' to Quit and
+  LOAD"MYDATA"  or CLOADM"MYDATA"
+- EXEC&H1400 and you will work with your last saved data
+To be able to save to disk (VDK files), you will need to access a drivewire server
+and use the DP50E functions to mount the desired disk
+*** DO NOT USE THESE TRICK WITH THE REAL VERSION, IT USES THE EEPROM INSTEAD ***
+
+
+
+HOW TO PLAY ORCHESTRA 90CC SCORES FROM THE COCO-SDC
+===================================================
+- Set the MPI to the slot where the Flash is
+- Start the Dragon/Tano while pressing the button on the module
+- Exit the program with '3'
+- DWLOAD"SWMAP1.BIN" so that the DP50E gets copied into RAM
+- SDRIVE1,"MUSICA" ... assuming that MUSICA is a folder where we have 10 VDK
+  with ORC90 scores. This changes to slot# where the SDC is
+  If you don't remember, you can use SDIR to find it out
+- SLOTN4 to set the MPI switch back to slot#4 in my case. Use the number
+  1-2-3-4 where you have the Flash module
+- POKE&HFFDE,0 to switch to MAP0 because programs reside in ROM (Flash)
+- EXEC&H1400 to enter the DFEM
+- '1' to go to Program Management
+- Search for the Orchestra90cc and press 'S' to start it
+- Shift-Enter (recommended to be able to play at double speed)
+- Now we need to change 'internally' to the slot where the SDC is
+  in my case is slot #1, so I enter command '0' and enter in Orchestra
+  The change slot commands are 0-1-2-3 (pressing H will show help screen)
+- Now you can work with Orchestra using the contents of the selected disk
+  in drive 1. Remember that pressing the button on the SDC changes to the 
+  next numbered disk in that folder (only drive 1)
+  As I want to listen to all of the scores I do enter
+- Y * (and shift enter)
+You can connect the stereo audio jack output on the Flash module to any 
+amplifier to listen to the music. Enjoy!
+
+
+
+Epilogue
+========
+Well, now we can say ....
+Another CoCo add-on that can be used on our Dragon/Tano
+I hope you enjoy your Coco-Flash module!
+
+cheers
+pere
