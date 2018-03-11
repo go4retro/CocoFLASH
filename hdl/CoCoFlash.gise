@@ -21,8 +21,112 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="CoCoFlash.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="CoCoFlash.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="CoCoFlash.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="CoCoFlash.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="CoCoFlash.jed"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="CoCoFlash.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="CoCoFlash.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="CoCoFlash.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="CoCoFlash.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="CoCoFlash.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="CoCoFlash.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="CoCoFlash.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="CoCoFlash.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CoCoFlash.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="CoCoFlash.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="CoCoFlash.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="CoCoFlash.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="CoCoFlash.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="CoCoFlash.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="CoCoFlash.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="CoCoFlash.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="CoCoFlash.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="CoCoFlash_build.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="CoCoFlash_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="CoCoFlash_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="CoCoFlash_pad.csv"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="CoCoFlash_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1519447645" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1519447645">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447645" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-8079275945835630439" xil_pn:start_ts="1519447645">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447652" xil_pn:in_ck="5932837946761563821" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="-4696024066278722039" xil_pn:start_ts="1519447645">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CoCoFlash.lso"/>
+      <outfile xil_pn:name="CoCoFlash.ngc"/>
+      <outfile xil_pn:name="CoCoFlash.ngr"/>
+      <outfile xil_pn:name="CoCoFlash.prj"/>
+      <outfile xil_pn:name="CoCoFlash.stx"/>
+      <outfile xil_pn:name="CoCoFlash.syr"/>
+      <outfile xil_pn:name="CoCoFlash.xst"/>
+      <outfile xil_pn:name="CoCoFlash_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447652" xil_pn:in_ck="6786177530690895486" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-8119255966982142220" xil_pn:start_ts="1519447652">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447658" xil_pn:in_ck="6198373946843536054" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-492989249246236380" xil_pn:start_ts="1519447652">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CoCoFlash.bld"/>
+      <outfile xil_pn:name="CoCoFlash.ngd"/>
+      <outfile xil_pn:name="CoCoFlash_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447683" xil_pn:in_ck="6786177530690887993" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-8392519632070112629" xil_pn:start_ts="1519447658">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="CoCoFlash.gyd"/>
+      <outfile xil_pn:name="CoCoFlash.mfd"/>
+      <outfile xil_pn:name="CoCoFlash.nga"/>
+      <outfile xil_pn:name="CoCoFlash.pad"/>
+      <outfile xil_pn:name="CoCoFlash.pnx"/>
+      <outfile xil_pn:name="CoCoFlash.rpt"/>
+      <outfile xil_pn:name="CoCoFlash.tim"/>
+      <outfile xil_pn:name="CoCoFlash.tspec"/>
+      <outfile xil_pn:name="CoCoFlash.vm6"/>
+      <outfile xil_pn:name="CoCoFlash.xml"/>
+      <outfile xil_pn:name="CoCoFlash_build.xml"/>
+      <outfile xil_pn:name="CoCoFlash_html"/>
+      <outfile xil_pn:name="CoCoFlash_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447686" xil_pn:in_ck="6786177530690896857" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1519447683">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CoCoFlash.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1520199934" xil_pn:in_ck="6786177530690883571" xil_pn:name="TRAN_impactProgrammingTool_CPLD" xil_pn:prop_ck="5511310460321941368" xil_pn:start_ts="1520199934">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1519447683" xil_pn:in_ck="6786177530690896857" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1519447681">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>
