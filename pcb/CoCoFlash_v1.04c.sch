@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -81,6 +81,8 @@
 <layer number="105" name="Beschreib" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="106" name="BGA-Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="107" name="BD-Top" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="110" name="OldCocoCase" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="111" name="NewCocoCase" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -21601,6 +21603,59 @@ www.irf.com&lt;p&gt;
 <text x="-24.765" y="6.096" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-24.765" y="4.445" size="1.27" layer="21">1</text>
 </package>
+<package name="PROGRAM_PAK">
+<wire x1="-51.562" y1="21.209" x2="-49.3649" y2="21.209" width="0" layer="110"/>
+<wire x1="-49.3649" y1="21.209" x2="-49.3649" y2="3.8862" width="0" layer="110"/>
+<wire x1="-49.3649" y1="3.8862" x2="-51.562" y2="3.8862" width="0" layer="110"/>
+<wire x1="-51.562" y1="3.8862" x2="-51.562" y2="-45.466" width="0" layer="110"/>
+<wire x1="-51.562" y1="-45.466" x2="51.562" y2="-45.466" width="0" layer="110"/>
+<wire x1="51.562" y1="-45.466" x2="51.562" y2="3.8862" width="0" layer="110"/>
+<wire x1="51.562" y1="3.8862" x2="49.3649" y2="3.8862" width="0" layer="110"/>
+<wire x1="49.3649" y1="3.8862" x2="49.3649" y2="21.209" width="0" layer="110"/>
+<wire x1="49.3649" y1="21.209" x2="51.562" y2="21.209" width="0" layer="110"/>
+<wire x1="51.562" y1="21.209" x2="51.562" y2="26.035" width="0" layer="110"/>
+<wire x1="51.562" y1="26.035" x2="45.72" y2="26.035" width="0" layer="110"/>
+<wire x1="45.72" y1="26.035" x2="45.72" y2="24.13" width="0" layer="110"/>
+<wire x1="45.72" y1="24.13" x2="38.1" y2="24.13" width="0" layer="110"/>
+<wire x1="38.1" y1="24.13" x2="38.1" y2="26.035" width="0" layer="110"/>
+<wire x1="38.1" y1="26.035" x2="-38.1" y2="26.035" width="0" layer="110"/>
+<wire x1="-38.1" y1="26.035" x2="-38.1" y2="24.13" width="0" layer="110"/>
+<wire x1="-38.1" y1="24.13" x2="-45.72" y2="24.13" width="0" layer="110"/>
+<wire x1="-45.72" y1="24.13" x2="-45.72" y2="26.035" width="0" layer="110"/>
+<wire x1="-45.72" y1="26.035" x2="-51.562" y2="26.035" width="0" layer="110"/>
+<wire x1="-51.562" y1="26.035" x2="-51.562" y2="21.209" width="0" layer="110"/>
+<wire x1="-51.2064" y1="26.543" x2="51.2064" y2="26.543" width="0" layer="111" style="shortdash"/>
+<wire x1="51.2064" y1="26.543" x2="51.2064" y2="24.0538" width="0" layer="111" style="shortdash"/>
+<wire x1="51.2064" y1="24.0538" x2="49.9618" y2="24.0538" width="0" layer="111" style="shortdash"/>
+<wire x1="49.9618" y1="24.0538" x2="49.9618" y2="3.6576" width="0" layer="111" style="shortdash"/>
+<wire x1="49.9618" y1="3.6576" x2="51.2064" y2="3.6576" width="0" layer="111" style="shortdash"/>
+<wire x1="51.2064" y1="3.6576" x2="51.2064" y2="-44.5008" width="0" layer="111" style="shortdash"/>
+<wire x1="51.2064" y1="-44.5008" x2="39.8145" y2="-44.5008" width="0" layer="111" style="shortdash"/>
+<wire x1="39.8145" y1="-44.5008" x2="-39.8145" y2="-44.5008" width="0" layer="111" style="shortdash"/>
+<wire x1="-39.8145" y1="-44.5008" x2="-51.2064" y2="-44.5008" width="0" layer="111" style="shortdash"/>
+<wire x1="-51.2064" y1="-44.5008" x2="-51.2064" y2="3.6576" width="0" layer="111" style="shortdash"/>
+<wire x1="-51.2064" y1="3.6576" x2="-49.9618" y2="3.6576" width="0" layer="111" style="shortdash"/>
+<wire x1="-49.9618" y1="3.6576" x2="-49.9618" y2="24.0538" width="0" layer="111" style="shortdash"/>
+<wire x1="-49.9618" y1="24.0538" x2="-51.2064" y2="24.0538" width="0" layer="111" style="shortdash"/>
+<wire x1="-51.2064" y1="24.0538" x2="-51.2064" y2="26.543" width="0" layer="111" style="shortdash"/>
+<wire x1="-39.8145" y1="-44.5008" x2="-39.8145" y2="-30.2768" width="0" layer="111" style="shortdash"/>
+<wire x1="-39.8145" y1="-30.2768" x2="39.8145" y2="-30.2768" width="0" layer="111" style="shortdash"/>
+<wire x1="39.8145" y1="-30.2768" x2="39.8145" y2="-44.5008" width="0" layer="111" style="shortdash"/>
+<hole x="0" y="1.27" drill="7.62"/>
+<hole x="0" y="0" drill="7.62"/>
+<hole x="-22.86" y="-24.13" drill="3.556"/>
+<hole x="22.86" y="-24.13" drill="3.556"/>
+<wire x1="-26.3525" y1="-33.02" x2="-26.3525" y2="-41.275" width="0" layer="111" style="shortdash"/>
+<wire x1="-26.3525" y1="-41.275" x2="-25.0825" y2="-42.545" width="0" layer="111" style="shortdash" curve="90"/>
+<wire x1="-25.0825" y1="-42.545" x2="25.0825" y2="-42.545" width="0" layer="111" style="shortdash"/>
+<wire x1="25.0825" y1="-42.545" x2="26.3525" y2="-41.275" width="0" layer="111" style="shortdash" curve="90"/>
+<wire x1="26.3525" y1="-41.275" x2="26.3525" y2="-33.02" width="0" layer="111" style="shortdash"/>
+<wire x1="-26.3525" y1="-33.02" x2="-26.3525" y2="-41.275" width="0" layer="110"/>
+<wire x1="-26.3525" y1="-41.275" x2="-25.0825" y2="-42.545" width="0" layer="110" curve="90"/>
+<wire x1="-25.0825" y1="-42.545" x2="25.0825" y2="-42.545" width="0" layer="110"/>
+<wire x1="25.0825" y1="-42.545" x2="26.3525" y2="-41.275" width="0" layer="110" curve="90"/>
+<wire x1="26.3525" y1="-41.275" x2="26.3525" y2="-33.02" width="0" layer="110"/>
+</package>
 </packages>
 <symbols>
 <symbol name="COCO">
@@ -21657,6 +21712,17 @@ www.irf.com&lt;p&gt;
 <pin name="+12V" x="-5.08" y="10.16" visible="pad" length="middle" direction="pwr" rot="R270"/>
 <text x="-6.35" y="2.54" size="1.27" layer="95">+12V</text>
 <text x="3.81" y="2.54" size="1.27" layer="95">-12V</text>
+</symbol>
+<symbol name="PROGRAM_PAK">
+<wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-5.08" x2="-10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-5.08" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<text x="-8.89" y="8.89" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -21803,6 +21869,18 @@ www.irf.com&lt;p&gt;
 <connect gate="X" pin="R/!W" pad="18"/>
 <connect gate="X" pin="SND" pad="35"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PROGRAM_PAK">
+<gates>
+<gate name="A" symbol="PROGRAM_PAK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PROGRAM_PAK">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -21968,6 +22046,7 @@ www.irf.com&lt;p&gt;
 <part name="P+12" library="supply1" deviceset="+5V" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
+<part name="PAK" library="coco" deviceset="PROGRAM_PAK" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -22060,6 +22139,7 @@ www.irf.com&lt;p&gt;
 <attribute name="NAME" x="244.8814" y="8.89" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="244.602" y="13.97" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="PAK" gate="A" x="-81.28" y="-172.72"/>
 </instances>
 <busses>
 <bus name="D[0..7],A[0..15],E,Q,R/!W,!CTS,!SCS,!CART,!NMI,!HALT,!SLENB,SND,!RESET">
